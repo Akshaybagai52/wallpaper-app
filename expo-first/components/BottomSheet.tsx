@@ -20,12 +20,15 @@ const BottomSheetNav = ({ onClose, children }: BottomSheetProps) => {
 
   return (
     <BottomSheet
+      // onClose={onClose}
       ref={bottomSheetRef}
       onChange={handleSheetChanges}
-      snapPoints={["25%", "50%", "90%"]}
+      snapPoints={["99%"]}
       enablePanDownToClose
+      style={{ flex: 1 }}
+      handleIndicatorStyle={{display: "none"}}
     >
-      <BottomSheetView>{children}</BottomSheetView>
+      <BottomSheetView style={{ flex: 1 }}>{children}</BottomSheetView>
     </BottomSheet>
   );
 };
